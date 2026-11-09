@@ -1,0 +1,366 @@
+{
+  "date": "2026-11-09",
+  "status": "ready_for_initial_source_and_evidence_submission",
+  "repository": {
+    "url": "https://github.com/gour6380/Animal-Face-Generation",
+    "origin": "git@github.com:gour6380/Animal-Face-Generation.git",
+    "local_branch": "codex/prepare-submission",
+    "remote_state_verified_read_only": "public, empty; contents endpoint reported repository empty",
+    "local_commits": 0,
+    "staged_files": 0,
+    "push_performed": false
+  },
+  "scope": "Publication documentation, output-free notebook, notebook-contract alignment and Git inclusion; no model/source algorithm changes.",
+  "checks": {
+    "notebook_contract_tests": {
+      "passed": 3,
+      "total": 3,
+      "python": "3.13.18",
+      "method": "stdlib runpy; call the three test functions directly; src.config uses only standard-library configuration code",
+      "notebook_cells_executed": 0,
+      "full_model_suite_rerun": false
+    },
+    "python_files_ast_parsed": 40,
+    "notebook_code_cells_ast_parsed": 86,
+    "public_notebook_output_free": true,
+    "public_notebook_code_sources_identical_to_original": true,
+    "portable_python3_kernel_metadata": true,
+    "original_executed_notebook_sha256": "25ed093e9c8d9df25811868f70070dc94f018b07ad7131757399337108b9843f",
+    "git_ignore_probes": {
+      "excluded": 56,
+      "included": 20,
+      "passed": 76
+    },
+    "local_document_link_occurrences_checked": 34,
+    "documentation_code_blocks_syntax_checked": {
+      "python": 3,
+      "shell": 4
+    },
+    "eligible_text_files_scanned": 64,
+    "pattern_scan": {
+      "patterns": [
+        "personal_home_path",
+        "gpu_uuid",
+        "private_key",
+        "github_token",
+        "aws_access_key"
+      ],
+      "matches": 0,
+      "scope": "Pattern screening, not a security audit."
+    },
+    "historical_evidence_source_hashes_verified": 118,
+    "compact_evidence_export_hashes_verified": 18,
+    "protected_existing_file_metadata_unchanged": 25026,
+    "protected_content_hashes_unchanged": 50,
+    "files_at_or_above_10_mib": 0,
+    "independent_read_only_review": "No actionable submission gaps found."
+  },
+  "submission": {
+    "file_count_including_this_receipt": 72,
+    "bytes_excluding_this_receipt": 4976620,
+    "file_hashes_exclude_receipt_self": true,
+    "files": {
+      ".gitignore": {
+        "bytes": 1229,
+        "sha256": "b87fbd4155f75b392f1cc8b0a28eb678e8618ecf3bd60363bf8c32f5930fc4be"
+      },
+      ".python-version": {
+        "bytes": 8,
+        "sha256": "9fa33d932bbf6e5784f15b467a9a10e4ce43993c2341ee742f23ce0196fd73e9"
+      },
+      "NOTICE.md": {
+        "bytes": 1494,
+        "sha256": "c40ffee631c607193eaede0f60fb4c9c56ddd871293501bcc8aedb391ca4005a"
+      },
+      "README.md": {
+        "bytes": 32900,
+        "sha256": "4d11b46ff3be0b00d6d4a5bfe8cde50093e1eb35157b21b3492e6e357a07a79b"
+      },
+      "data/.gitkeep": {
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      "notebooks/animal_face_generation_public.ipynb": {
+        "bytes": 42293,
+        "sha256": "d183d1b62555e8810b6e02cfcc286562f68380f65c125d7bc057a79bcb7dc245"
+      },
+      "reports/run_001/benchmark_trials.csv": {
+        "bytes": 13405,
+        "sha256": "2dad17fc70019d3bd85cd51cf3e8db43660613c69ddc07acf01820fd1bfff0f3"
+      },
+      "reports/run_001/benchmarks.csv": {
+        "bytes": 2048,
+        "sha256": "aff80065cd071b1768ec4807b91e6f0b954d606d958e7f324d33e215748b6992"
+      },
+      "reports/run_001/evidence_manifest.json": {
+        "bytes": 34846,
+        "sha256": "e3355e8920e81839e65003ff81e9c967fb134bef980d91d98121ebb22ed6e329"
+      },
+      "reports/run_001/figures/autoregressive_history.png": {
+        "bytes": 73698,
+        "sha256": "8ed607a4db6840a7dbd66dea5b14a06362728dea76de5e58857d1d2ca5beaf7e"
+      },
+      "reports/run_001/figures/comparison_kid.png": {
+        "bytes": 53135,
+        "sha256": "b6d78dedd3155e38915cbc6004a29fe85b88408e883aec50b2ced82214143393"
+      },
+      "reports/run_001/figures/comparison_quality_speed.png": {
+        "bytes": 50010,
+        "sha256": "e70f972c6996ddf141f8f957bed1d82db611df78bf4f033723c71a00d0fb7f4b"
+      },
+      "reports/run_001/figures/ddim_50_grid.png": {
+        "bytes": 1862126,
+        "sha256": "5cf0024cf74780866336a32442bb8010d880ec9df99d781dee0a54df9a57ed99"
+      },
+      "reports/run_001/figures/ddpm_cat_6001_4_grid.png": {
+        "bytes": 541894,
+        "sha256": "ed4cdfddc16bec2359e6e64f5d8c58631609fbc0f844aab2fec3bcea93786623"
+      },
+      "reports/run_001/figures/diffusion_history.png": {
+        "bytes": 61271,
+        "sha256": "53c47c6e1f69d6e4d52cfab169808f875cf31e4a90b9e6d88e146dd44dec6634"
+      },
+      "reports/run_001/figures/temperature_1.0_grid.png": {
+        "bytes": 1560342,
+        "sha256": "fbe7e6bd47ba277793cbc024a3db0c15737990f425088f4640f65d6916101543"
+      },
+      "reports/run_001/figures/tokenizer_history.png": {
+        "bytes": 77887,
+        "sha256": "c1db01e0b49442b4a6cbb8f7dced0346d028ea4ff1cee9a15341a3db7539ab11"
+      },
+      "reports/run_001/jobs.csv": {
+        "bytes": 5050,
+        "sha256": "981166a41059cf2e8a9e1922cd79fe2dd6e6ab8c85b8f9ee512a844b73cb9892"
+      },
+      "reports/run_001/metrics.csv": {
+        "bytes": 3114,
+        "sha256": "7270c5c9c1de37725aa1e143b05a20323762d064df24532ae5cc7294bdaacf23"
+      },
+      "reports/run_001/run_config.json": {
+        "bytes": 2758,
+        "sha256": "028338467badf8c9cf66f2c15a9adb63aa5f0183ab7d4541b91a354cb892b1d8"
+      },
+      "reports/run_001/sampling_protocol.json": {
+        "bytes": 3599,
+        "sha256": "676e5a28a5731d99ef343e010dda5908bf7ff60c1d1d7acd0b33330965a63942"
+      },
+      "reports/run_001/summary.json": {
+        "bytes": 10934,
+        "sha256": "8d8d99c88f2948f7cfbf1abd02de26cd57fe61f6fe618e3778a7327e1a700b20"
+      },
+      "reports/run_001/training/autoregressive.csv": {
+        "bytes": 27924,
+        "sha256": "bfb350d1badd31fa3f20445b0ad6979a1f2a7303012424ca187bcf2da4341553"
+      },
+      "reports/run_001/training/diffusion.csv": {
+        "bytes": 29234,
+        "sha256": "a324e9ff479a855c45cd8e934a13cc36d08d1efe4821b48c17b9dffac5f2cef3"
+      },
+      "reports/run_001/training/tokenizer.csv": {
+        "bytes": 30853,
+        "sha256": "54ad9eba0b38c9c890e045430245a70547ec4362e4d9ff7c551491b52da46b1f"
+      },
+      "reports/technical-report.md": {
+        "bytes": 19519,
+        "sha256": "9b6b09fce45a76b3cf39621ac49412dd55e2b68da2ed9a1440e6acffd14acfb7"
+      },
+      "requirements-dev.txt": {
+        "bytes": 183,
+        "sha256": "dd0fcc299fc7c6db9a99ba70c8ed075d1abce0ee6086a577ed4fb3fce8073d4a"
+      },
+      "requirements.in": {
+        "bytes": 98,
+        "sha256": "f4abfd0e8b6505891195fd403dcfdfb9284a4936c3603b4013357752f120109f"
+      },
+      "requirements.txt": {
+        "bytes": 753,
+        "sha256": "7baf55bddaa1f115a15ce5860cfa726db5ce7d53a910cc28dc1b94dc3a784c70"
+      },
+      "src/__init__.py": {
+        "bytes": 78,
+        "sha256": "117f09a3f9fcd3043194ddcbe3a904fc626d370ed2186e00cc3823dde3139c1a"
+      },
+      "src/benchmark.py": {
+        "bytes": 8027,
+        "sha256": "26b05082cbc417093f83818533faa6df079ee4d0f689de85fb5a11b72fc979ac"
+      },
+      "src/checkpoints.py": {
+        "bytes": 10517,
+        "sha256": "169ac010805d1fb9d77a29002ce4864f71794c2c62abafa8352c0a736912c344"
+      },
+      "src/config.py": {
+        "bytes": 9243,
+        "sha256": "9056cf276498b9b50339e478443ce6fa261aa1a27252d4b36b2a3a4e2c1e3c5b"
+      },
+      "src/data.py": {
+        "bytes": 20765,
+        "sha256": "c29f0b72b2019e9bddcf355f52639a683d88044512ef9d64a229231a85fde11b"
+      },
+      "src/device.py": {
+        "bytes": 2534,
+        "sha256": "5f9d597c012bb0a75915c0372f8e934ac8e118304e708ef65c589f31a9356d51"
+      },
+      "src/distributed.py": {
+        "bytes": 6171,
+        "sha256": "7eb821e2796c18a405b26d877c88589ab53428e189021d810f038d7fb511502c"
+      },
+      "src/evaluate.py": {
+        "bytes": 23243,
+        "sha256": "e86ba1af4c9714c8ee2f3c4c9014d31c58db2bff98041dda1d5da37555d57d1a"
+      },
+      "src/execution.py": {
+        "bytes": 8515,
+        "sha256": "77e022057337d7619f7796ee262d7fda8d1e2fd0e3dbcf68596822d6f6114404"
+      },
+      "src/hardware.py": {
+        "bytes": 9785,
+        "sha256": "9c6bfe31c1b95461c9e4737bb283b3661c5d3375436030ea206d61cd55b278cb"
+      },
+      "src/image_cache.py": {
+        "bytes": 2217,
+        "sha256": "c69f31a19c54f9e3ec55754086f3d7b713de6697af76069389f9b55d223440db"
+      },
+      "src/inspection.py": {
+        "bytes": 1216,
+        "sha256": "98598a948576abd7e06d4802cace1d80f5171146d2a7523381f862dee879581b"
+      },
+      "src/io.py": {
+        "bytes": 1625,
+        "sha256": "7735062726ced9df6d7127a3fc24c1624cfecaa3688c8fbe6e13745f7a868f77"
+      },
+      "src/launcher.py": {
+        "bytes": 20309,
+        "sha256": "7f4900d3a00d40c01401c68849e7e6ffe34a9f6ebbeae2f2ff3a3ea90ebb655b"
+      },
+      "src/locking.py": {
+        "bytes": 1431,
+        "sha256": "effbcf8e0d1136e618f15be004358bff7078508529bcf7cbd0fdb2d26928d86c"
+      },
+      "src/models/__init__.py": {
+        "bytes": 52,
+        "sha256": "836709e9be6c32690aef33b9bf8a9e18fe1ae5063a7a4f709c8a82e4a74a00f6"
+      },
+      "src/models/autoregressive.py": {
+        "bytes": 11999,
+        "sha256": "5bb3d487b5c05c1534af0c3c846d7a361b033a2c260cdc01a71a718128dd85fd"
+      },
+      "src/models/diffusion.py": {
+        "bytes": 15422,
+        "sha256": "fe68094aeaed2ec6952d5bcb3477adf52a403bd415e3d035344ef7141ebe18a2"
+      },
+      "src/models/tokenizer.py": {
+        "bytes": 6689,
+        "sha256": "71545b02e76257b0daa462b81bf90f4a9ef161b74b2c331159e07f7deba4f697"
+      },
+      "src/reporting.py": {
+        "bytes": 25599,
+        "sha256": "61562459665c28c7ff8d6c05b2ea16be9e8458b1f52fe107334f0b017b1fb2c8"
+      },
+      "src/runs.py": {
+        "bytes": 9547,
+        "sha256": "fa623116bf0cd0b438319822386a0b6819614f34e40489130314ca12664285b9"
+      },
+      "src/sample.py": {
+        "bytes": 16508,
+        "sha256": "5e40e6b8d1e66f70ec3aa845f7b138c7fa1cc3109d8cdc0f9e73573d4330cfd7"
+      },
+      "src/telemetry.py": {
+        "bytes": 4412,
+        "sha256": "254620801c04905348d98f9f6f8af4524e0de37c842dde864c1d3a5cc0c8594a"
+      },
+      "src/tokenization.py": {
+        "bytes": 17445,
+        "sha256": "bb5264004c692087aad92e5cfbcb98ba83a0f8eb192ffd87f108fbaa917bf345"
+      },
+      "src/tracking.py": {
+        "bytes": 2021,
+        "sha256": "0b3811e5f05f1a207e56483d126359becd2e1629d44b8e3b6104a14f778adabc"
+      },
+      "src/train.py": {
+        "bytes": 30774,
+        "sha256": "e4a94de9efbda0ac996e8e810fbab01b17990f87abcd6e0012fe90a337c44ee8"
+      },
+      "src/weights.py": {
+        "bytes": 5253,
+        "sha256": "bde4df024216f0ecba25002a1cc650e49bbbcdf0095e4ad20c4d74fadacb1bc7"
+      },
+      "tests/test_acquisition.py": {
+        "bytes": 9974,
+        "sha256": "5e6df39a147f9fbc9f58369e22fe31be5a03be3dc3fa4dfdf2fec2caa44e6e5e"
+      },
+      "tests/test_boundaries.py": {
+        "bytes": 10739,
+        "sha256": "4931620f8df7406e1879ac253b1a8247d39bf49c4165efe359c5c5a0f38c2f17"
+      },
+      "tests/test_distributed.py": {
+        "bytes": 16803,
+        "sha256": "f349f89af91f7b8df82b9804dd9ca874117682f6b2a6756332dd0b186cd8c12f"
+      },
+      "tests/test_evaluation.py": {
+        "bytes": 3926,
+        "sha256": "45a1a3521f47a7a323415c38f8c94b75d38aa83dea007b88441f0daba3b5bb5d"
+      },
+      "tests/test_hardware.py": {
+        "bytes": 4896,
+        "sha256": "f774994f0557d0ac1cd3a7622443197015b60eca06cc56f62e4e05a10750fe84"
+      },
+      "tests/test_image_cache.py": {
+        "bytes": 6629,
+        "sha256": "cdd6afd5c1df5e37cf1413e748b06f37d5aeee4f488f6c1c159f26c6dda543a1"
+      },
+      "tests/test_inference_optimizations.py": {
+        "bytes": 9623,
+        "sha256": "b3ea6760d44d4063c9667a5f0542a7786d8ff20e1dea184cfbb141ae14910a70"
+      },
+      "tests/test_infrastructure.py": {
+        "bytes": 24849,
+        "sha256": "94a15e78814e6b21e6a62c7a8c20f5cf9b7229e01884ca27581b0dd53af54f64"
+      },
+      "tests/test_launcher.py": {
+        "bytes": 13017,
+        "sha256": "b9ad36857e7d7ebe8ea5f754da0ec37da10ef339597496a73ab08294e6a9c1d8"
+      },
+      "tests/test_models.py": {
+        "bytes": 9872,
+        "sha256": "7bf8321dd765d734147afa724edcc7589c0aff47e2a67cd85eaf91ce68afd2eb"
+      },
+      "tests/test_notebook_contract.py": {
+        "bytes": 6915,
+        "sha256": "69ef2b569d523780401857f99ec84b9a2d6ef762fae9deb606a6043dfc24228e"
+      },
+      "tests/test_parallel_runs.py": {
+        "bytes": 4605,
+        "sha256": "c629b4269cc121a672ef4f9478a2a8f8c6c1b0ae929bb48fb87a69680e92eea9"
+      },
+      "tests/test_training.py": {
+        "bytes": 9611,
+        "sha256": "d6208ac9ddae20761d791959ac3adf36f81697a45a5679d40c5e1d047e59fe53"
+      },
+      "verification/implementation.json": {
+        "bytes": 19414,
+        "sha256": "021d5cfe9c600b65fffad9e3545dafd53c700ef39da9dc8c48332ff5f8801cd4"
+      },
+      "verification/pip-resolution.json": {
+        "bytes": 11744,
+        "sha256": "62917443768fa479d1517bb3de0d5d4c3fcf7724c18b8e51265ddb488298c795"
+      }
+    }
+  },
+  "execution_boundary": {
+    "dependencies_installed": false,
+    "notebook_executed": false,
+    "models_executed": false,
+    "datasets_or_weights_downloaded": false,
+    "full_pytest_or_ruff_run": false,
+    "historical_full_suite_result": "178 passes in verification/implementation.json; historical, not repeated here"
+  },
+  "known_limits": [
+    "Diffusion generated abstract patterns; its failure cause remains unresolved.",
+    "Recorded generator schedules used zero warm-up and constant learning rates, unlike the intended warm-up/cosine protocol.",
+    "Transformer validation overfitting, low tokenizer code usage and one training seed limit conclusions.",
+    "Saved-run inference enforces the original environment/backend/topology; cross-device loading is not supported.",
+    "The downloaded historical source snapshot lacks its manifest-listed .python-version; historical snapshot bytes were not modified.",
+    "No source-code LICENSE has been selected; dataset and pretrained-weight notices are separate.",
+    "A source checkout excludes historical checkpoints, data and full run artifacts; it is not a checkpoint/inference release."
+  ]
+}

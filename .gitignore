@@ -1,0 +1,77 @@
+# Python environments, build products and tool caches
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Submit the clean public notebook; preserve executed notebooks locally.
+/notebooks/*
+!/notebooks/animal_face_generation_public.ipynb
+.ipynb_checkpoints/
+
+# Dataset, external weights and full experiment artifacts
+/data/*
+!/data/.gitkeep
+/runs/*
+!/runs/.gitkeep
+/jobs/
+/diagnostics/
+/.device-locks/
+/checkpoints/
+/tensorboard/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.npy
+*.npz
+events.out.tfevents.*
+*.log
+*.lock
+*.partial
+*.part
+
+# Retain compact historical checks; omit local setup and packaging records.
+/implementation_checks.json
+/verification/*
+!/verification/implementation.json
+!/verification/pip-resolution.json
+!/verification/submission.json
+
+# Curated reports/, tables and selected figures remain eligible for Git.
+# Do not broadly ignore JSON, CSV, PNG or the source .python-version file.
+
+# Local archives, temporary files, credentials and editor state
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+/tmp/
+/output/
+.env
+.env.*
+!.env.example
+.credentials/
+.aws/
+.ssh/
+*.pem
+*.key
+.DS_Store
+.AppleDouble
+.idea/
+.vscode/
+*.swp
+*~

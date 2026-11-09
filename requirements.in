@@ -1,0 +1,2 @@
+# Compatibility entry point; requirements.txt is the maintained runtime list.
+-r requirements.txt

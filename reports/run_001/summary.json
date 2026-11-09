@@ -1,0 +1,299 @@
+{
+  "analysis": "analysis_001",
+  "checkpoints": {
+    "generator_selection": "final epoch; diffusion EMA, autoregressive raw weights",
+    "selected_tokenizer": {
+      "checkpoint": "models/tokenizer/best_validation.pt",
+      "codebook_size": 512,
+      "codec_sha256": "d3336a92f96fa19b92f63a9e8f8049d51db635f5f767cccb45cbe21679b7000d",
+      "data_digest": "88d5025f49c2116c84ce980417ec99a4411636e4ff15609fa375352271d3db32",
+      "embedding_dim": 64,
+      "latent_size": 16,
+      "mean": -0.001873324401927648,
+      "reconstruction_metrics_sha256": "042099369aa50afe60efc0d1f9b038db076bf46df69e3070c64a10ee17fb1d46",
+      "selected_epoch": 98,
+      "selection": "minimum validation L1 + perceptual_weight * LPIPS; earliest tie",
+      "std": 0.9414470714798905,
+      "token_cache_identity": "4960f9d6c52c2793f853d5d3e7cfedeacba8f37cffae1b1bb1f7b7fff6324966"
+    }
+  },
+  "coverage": {
+    "benchmark_groups": 12,
+    "complete_jobs": 35,
+    "generated_evaluation_pngs": 8694,
+    "jobs": 35,
+    "measured_benchmark_trials": 360,
+    "notebook_code_cells": 86,
+    "notebook_executed_code_cells": 86,
+    "notebook_saved_error_outputs": 0,
+    "sampling_settings": 6
+  },
+  "data": {
+    "archive_checksum_basis": "Locally observed SHA-256 on first acquisition; not an independently supplied publisher checksum.",
+    "archive_sha256": "6f2540f22c6d8ebb8879a2bc0227666dd4fc765cc355cb073b63a835d679e4e3",
+    "balanced_reference_per_class": 483,
+    "balanced_reference_total": 1449,
+    "dataset": "AFHQ v2",
+    "held_out_partition": "test",
+    "latent_training_mean": -0.001873324401927648,
+    "latent_training_std": 0.9414470714798905,
+    "license": "CC BY-NC 4.0",
+    "observed_total": 15803,
+    "preprocessing": {
+      "augmentation": null,
+      "image_size": 128,
+      "range": [
+        -1,
+        1
+      ],
+      "resize": "PIL.LANCZOS",
+      "rgb": true
+    },
+    "source": "https://github.com/clovaai/stargan-v2#animal-faces-hq-dataset-afhq",
+    "split_counts": {
+      "test": {
+        "cat": 493,
+        "dog": 491,
+        "wild": 483
+      },
+      "train": {
+        "cat": 4559,
+        "dog": 4211,
+        "wild": 4134
+      },
+      "validation": {
+        "cat": 506,
+        "dog": 467,
+        "wild": 459
+      }
+    },
+    "split_seed": 1001,
+    "token_cache_identity": "4960f9d6c52c2793f853d5d3e7cfedeacba8f37cffae1b1bb1f7b7fff6324966"
+  },
+  "documentation_date": "2026-10-01",
+  "export_kind": "Derived documentation from existing artifacts; no training, sampling, metric extraction or benchmark was executed for this export.",
+  "identity": {
+    "config_sha256": "77f20655d3d4821c2f3181c2927980d82c5edc35fcf2a85c6f73c8f2e84d458d",
+    "source_sha256": "45385c6d074b228f7e02b4a076f8b93dcee3b75319bbf0e082ed8228f1249f77"
+  },
+  "limitations": [
+    "One training seed; no training-seed confidence interval.",
+    "Actual zero warmup disables cosine decay: constant learning rates throughout.",
+    "Diffusion sample failure observed; root cause unproven.",
+    "Tokenizer validation uses 62 of 512 codes.",
+    "Downloaded snapshot is missing .python-version; normal loader also requires original runtime identity.",
+    "Held-out results already inspected; future tuning must use development validation and be reported as exploratory.",
+    "Compact evidence excludes checkpoints, raw features and original dataset images; complete independent reproduction requires preserved local artifacts."
+  ],
+  "nearest_training_distances": {
+    "ddim_100": {
+      "median_distance": 15.523592948913574,
+      "minimum_distance": 8.318889617919922
+    },
+    "ddim_25": {
+      "median_distance": 15.53493881225586,
+      "minimum_distance": 9.442292213439941
+    },
+    "ddim_50": {
+      "median_distance": 15.5338716506958,
+      "minimum_distance": 8.353394508361816
+    },
+    "temperature_0.8": {
+      "median_distance": 8.7737398147583,
+      "minimum_distance": 3.25771427154541
+    },
+    "temperature_1.0": {
+      "median_distance": 8.347902297973633,
+      "minimum_distance": 3.2224690914154053
+    },
+    "temperature_1.2": {
+      "median_distance": 8.351419448852539,
+      "minimum_distance": 3.4106192588806152
+    }
+  },
+  "pretrained_weights": {
+    "inception": {
+      "bytes": 95628359,
+      "checksum_basis": "Observed SHA256; filename suffix is not assumed to be a published SHA256",
+      "sha256": "6726825d0af5f729cebd5821db510b11b1cfad8faad88a03f1befd49fb9129b2",
+      "url": "https://github.com/toshas/torch-fidelity/releases/download/v0.2.0/weights-inception-2015-12-05-6726825d.pth"
+    },
+    "lpips": {
+      "bytes": 7289,
+      "package_version": "0.1.4",
+      "sha256": "a78928a0af1e5f0fcb1f3b9e8f8c3a2a5a3de244d830ad5c1feddc79b8432868",
+      "source": "installed lpips/weights/v0.1/vgg.pth"
+    },
+    "vgg16": {
+      "bytes": 553433881,
+      "checksum_basis": "PyTorch filename SHA256 prefix plus observed full SHA256",
+      "sha256": "397923af8e79cdbb6a7127f12361acd7a2f83e06b05044ddf496e83de57a5bf0",
+      "url": "https://download.pytorch.org/models/vgg16-397923af.pth"
+    }
+  },
+  "reconstruction": {
+    "codebook_usage": 0.12109375,
+    "count": 1432,
+    "l1": 0.10196102298171826,
+    "lpips": 0.2620464050570014,
+    "objective": 0.1281656634874184,
+    "perplexity": 57.525365807942066,
+    "psnr": 23.120620940650642,
+    "used_codes": 62
+  },
+  "run": "run_001",
+  "runtime": {
+    "cpu_threads_per_worker": 4,
+    "cuda_build": "13.0",
+    "driver": "595.91.07",
+    "dtype": "float32",
+    "generators_concurrent": true,
+    "gpus": [
+      {
+        "name": "NVIDIA L40S",
+        "reported_total_memory_bytes": 47667740672
+      },
+      {
+        "name": "NVIDIA L40S",
+        "reported_total_memory_bytes": 47667740672
+      }
+    ],
+    "host_ram_note": "Host-global CPU/RAM counters are intentionally omitted; they do not establish the Pod allocation.",
+    "machine": "x86_64",
+    "mixed_precision": false,
+    "notebook_nccl_environment": {
+      "NCCL_DEBUG": "INFO",
+      "NCCL_P2P_DISABLE": "1"
+    },
+    "packages": {
+      "filelock": "4.0.0",
+      "ipykernel": "6.30.1",
+      "lpips": "0.1.4",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "pillow": "12.3.0",
+      "psutil": "7.2.2",
+      "scipy": "1.18.1",
+      "tensorboard": "2.21.0",
+      "torch": "2.14.0",
+      "torch_fidelity": "0.4.0",
+      "torchvision": "0.29.0",
+      "tqdm": "4.70.1"
+    },
+    "python": "3.12.3",
+    "system": "Linux",
+    "tf32": false,
+    "tokenizer_world_size": 2,
+    "torch_build": "2.14.0+cu130"
+  },
+  "status": "execution complete; diffusion failure diagnosis and reproducibility repair pending",
+  "timing": {
+    "first_recorded_job_ist": "2026-10-01T14:28:31+05:30",
+    "first_recorded_job_utc": "2026-10-01T08:58:31+00:00",
+    "last_job_end_ist_approx": "2026-10-01T16:11:50+05:30",
+    "last_job_end_utc_approx": "2026-10-01T10:41:50+00:00",
+    "meaning": "Timestamp-to-timestamp span, includes notebook gaps; excludes previous installation, original acquisition and troubleshooting. Download/weight workers reused cache.",
+    "recorded_session_elapsed_seconds_approx": 6199.0
+  },
+  "training": {
+    "autoregressive": {
+      "best_checkpoint_sha256": "80c0023813de1951e689d2d88f56ad1a2056d861b717720a8502906370e3666c",
+      "best_validation_epoch": 21,
+      "best_validation_metric": "validation/loss",
+      "best_validation_objective": 3.430605408865646,
+      "checkpoint_file_sizes_bytes": {
+        "best_validation": 133785041,
+        "final": 133785041,
+        "last": 133785041
+      },
+      "epochs": 200,
+      "final_checkpoint_sha256": "bbba2c3a58c69288db1e436711510ddd429df2a61376e761a094dc5abe7f1c7e",
+      "final_training_loss": 2.2490763840140278,
+      "final_validation_loss": 4.489640041436563,
+      "global_steps": 40400,
+      "learning_rates_observed": [
+        0.0003
+      ],
+      "parameters": 11140224,
+      "status": "complete",
+      "train_and_validation_epoch_seconds": 2510.3540866950643,
+      "training_image_exposures": 2580800
+    },
+    "diffusion": {
+      "best_checkpoint_sha256": "ae484ec2a7aa0973306d1b49a3ebb54211b71d535251a1dd191909b8e7d5fbce",
+      "best_validation_epoch": 198,
+      "best_validation_metric": "validation/loss",
+      "best_validation_objective": 0.04773989288583814,
+      "checkpoint_file_sizes_bytes": {
+        "best_validation": 175316731,
+        "final": 175316731,
+        "last": 175316731
+      },
+      "epochs": 200,
+      "final_checkpoint_sha256": "a17d835e6eb79d72b01cdfb38bf0163e811f5e1a3dabdbadb3fbe331310a38c2",
+      "final_training_loss": 0.048392972703942286,
+      "final_validation_loss": 0.049491405507872226,
+      "global_steps": 40400,
+      "learning_rates_observed": [
+        0.0001
+      ],
+      "parameters": 10940288,
+      "status": "complete",
+      "train_and_validation_epoch_seconds": 2584.840674996958,
+      "training_image_exposures": 2580800
+    },
+    "tokenizer": {
+      "best_checkpoint_sha256": "d3336a92f96fa19b92f63a9e8f8049d51db635f5f767cccb45cbe21679b7000d",
+      "best_validation_epoch": 98,
+      "best_validation_metric": "validation/reconstruction",
+      "best_validation_objective": 0.12816566503580723,
+      "checkpoint_file_sizes_bytes": {
+        "best_validation": 89781627,
+        "final": 89781627,
+        "last": 89781627
+      },
+      "epochs": 100,
+      "final_checkpoint_sha256": "dde20de5b88f243ef8cd1f7afc3aeca4329489c5211b905b7f6f22a6ffe48844",
+      "final_training_loss": 0.25332165000439427,
+      "final_validation_loss": 0.2645418431672304,
+      "global_steps": 20200,
+      "learning_rates_observed": [
+        0.0002
+      ],
+      "parameters": 7467843,
+      "status": "complete",
+      "train_and_validation_epoch_seconds": 2628.4053525749478,
+      "training_image_exposures": 1290400
+    }
+  },
+  "training_telemetry": {
+    "autoregressive": {
+      "duration_seconds": 2649.183556624019,
+      "mean_tree_cpu_percent": 100.02309160305343,
+      "meaning": "Sampled observations, not exact peaks; child RSS can include shared pages.",
+      "observed_peak_tree_rss_bytes": 1861414912,
+      "samples": 524,
+      "stage": "train_autoregressive",
+      "status": "complete"
+    },
+    "diffusion": {
+      "duration_seconds": 2762.4190617440036,
+      "mean_tree_cpu_percent": 100.03180987202926,
+      "meaning": "Sampled observations, not exact peaks; child RSS can include shared pages.",
+      "observed_peak_tree_rss_bytes": 2333360128,
+      "samples": 547,
+      "stage": "train_diffusion",
+      "status": "complete"
+    },
+    "train_tokenizer": {
+      "duration_seconds": 2690.796897190012,
+      "mean_tree_cpu_percent": 477.3020676691729,
+      "meaning": "Sampled observations, not exact peaks; child RSS can include shared pages.",
+      "observed_peak_tree_rss_bytes": 7242219520,
+      "samples": 532,
+      "stage": "train_tokenizer",
+      "status": "complete"
+    }
+  }
+}

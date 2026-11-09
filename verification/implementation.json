@@ -1,0 +1,383 @@
+{
+  "checks": {
+    "dependency_resolution": "Four offline compatible-candidate metadata audits plus an existing-local-environment pip dry-run; accepts Debian pyparsing3.1.1; see pip-resolution.json limits",
+    "notebook": {
+      "cells": 124,
+      "code_cells": 85,
+      "executed_during_preparation": false,
+      "kernel": "python3",
+      "outputs": "empty",
+      "schema": "valid"
+    },
+    "pip_check": "No broken requirements found",
+    "preservation": {
+      "existing_run_files_verified_unchanged": 8891,
+      "method": "Exact file inventory, size and modification timestamp compared before/after this patch; no experiment files written",
+      "notebook_configuration": "Notebook byte-identical to the L40S ZIP; all 85 code cells unchanged",
+      "previous_upload_zip": "preserved locally in excluded diagnostics",
+      "requirements": "All three requirements files byte-identical to the L40S ZIP",
+      "source": "Only src/train.py changed relative to the L40S ZIP: explicit NCCL device binding/barriers and flushed startup messages"
+    },
+    "pytest": {
+      "command": "python -m pytest tests -q",
+      "failed": 0,
+      "passed": 178,
+      "scope": "offline synthetic CPU/Gloo, mocked NCCL local-device binding for both ranks, CPU isolation, UUID rejection, explicit barriers, cache/sample/metric/protocol/recovery checks; no actual CUDA work",
+      "seconds": 31.8
+    },
+    "ruff": {
+      "command": "python -m ruff check src tests notebooks/animal_face_generation.ipynb",
+      "status": "passed"
+    },
+    "syntax": "All source/test files and 85 notebook code cells parsed successfully"
+  },
+  "date": "2026-10-01",
+  "defaults": {
+    "device_priority": [
+      "mps",
+      "cuda_multiple",
+      "cuda_single",
+      "cpu"
+    ],
+    "effective_batch": 64,
+    "epochs": {
+      "autoregressive": 1,
+      "diffusion": 1,
+      "tokenizer": 1
+    },
+    "evaluation": "full six settings; KID 100 subsets; benchmark batches 1/8, warmups3, repetitions30",
+    "evaluation_batches": {
+      "benchmark": [
+        1,
+        8
+      ],
+      "features": 32,
+      "generation": 16
+    },
+    "portable_module_batches": {
+      "autoregressive": 16,
+      "diffusion": 16,
+      "features": 8,
+      "generation": 8,
+      "tokenizer_inference": 32,
+      "tokenizer_per_gpu": 4
+    },
+    "precision": "FP32; AMP and TF32 disabled",
+    "runtime": {
+      "cpu_threads": 4,
+      "io_workers": 8,
+      "num_workers": 0,
+      "tokenizer_inference_batch": 64
+    },
+    "scope": "Explicit L40S notebook preset; conservative local-module defaults remain unchanged",
+    "selected_cuda_gpus_max": 2,
+    "training_microbatch": {
+      "autoregressive": 32,
+      "diffusion": 32,
+      "tokenizer_per_gpu": 8
+    }
+  },
+  "environment": {
+    "machine": "arm64",
+    "packages": {
+      "lpips": "0.1.4",
+      "numpy": "2.5.3",
+      "pip": "25.3",
+      "pytest": "9.1.1",
+      "ruff": "0.16.8",
+      "torch": "2.14.0",
+      "torch-fidelity": "0.4.0",
+      "torchvision": "0.29.0"
+    },
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.11"
+  },
+  "file_sha256": {
+    "README.md": "1f0e6b949e02e0afc2b9424af7237155e40a4bbd6cb553dbfb1807f9eb032e99",
+    "notebooks/animal_face_generation.ipynb": "db89773cc20027e79014f57d33d1a8d4d20e43bc71eb39d37430e251f5f2a2df",
+    "requirements-dev.txt": "dd0fcc299fc7c6db9a99ba70c8ed075d1abce0ee6086a577ed4fb3fce8073d4a",
+    "requirements.in": "f4abfd0e8b6505891195fd403dcfdfb9284a4936c3603b4013357752f120109f",
+    "requirements.txt": "7baf55bddaa1f115a15ce5860cfa726db5ce7d53a910cc28dc1b94dc3a784c70",
+    "src/__init__.py": "117f09a3f9fcd3043194ddcbe3a904fc626d370ed2186e00cc3823dde3139c1a",
+    "src/benchmark.py": "26b05082cbc417093f83818533faa6df079ee4d0f689de85fb5a11b72fc979ac",
+    "src/checkpoints.py": "169ac010805d1fb9d77a29002ce4864f71794c2c62abafa8352c0a736912c344",
+    "src/config.py": "9056cf276498b9b50339e478443ce6fa261aa1a27252d4b36b2a3a4e2c1e3c5b",
+    "src/data.py": "c29f0b72b2019e9bddcf355f52639a683d88044512ef9d64a229231a85fde11b",
+    "src/device.py": "5f9d597c012bb0a75915c0372f8e934ac8e118304e708ef65c589f31a9356d51",
+    "src/distributed.py": "7eb821e2796c18a405b26d877c88589ab53428e189021d810f038d7fb511502c",
+    "src/evaluate.py": "e86ba1af4c9714c8ee2f3c4c9014d31c58db2bff98041dda1d5da37555d57d1a",
+    "src/execution.py": "77e022057337d7619f7796ee262d7fda8d1e2fd0e3dbcf68596822d6f6114404",
+    "src/hardware.py": "9c6bfe31c1b95461c9e4737bb283b3661c5d3375436030ea206d61cd55b278cb",
+    "src/image_cache.py": "c69f31a19c54f9e3ec55754086f3d7b713de6697af76069389f9b55d223440db",
+    "src/inspection.py": "98598a948576abd7e06d4802cace1d80f5171146d2a7523381f862dee879581b",
+    "src/io.py": "7735062726ced9df6d7127a3fc24c1624cfecaa3688c8fbe6e13745f7a868f77",
+    "src/launcher.py": "7f4900d3a00d40c01401c68849e7e6ffe34a9f6ebbeae2f2ff3a3ea90ebb655b",
+    "src/locking.py": "effbcf8e0d1136e618f15be004358bff7078508529bcf7cbd0fdb2d26928d86c",
+    "src/models/__init__.py": "836709e9be6c32690aef33b9bf8a9e18fe1ae5063a7a4f709c8a82e4a74a00f6",
+    "src/models/autoregressive.py": "5bb3d487b5c05c1534af0c3c846d7a361b033a2c260cdc01a71a718128dd85fd",
+    "src/models/diffusion.py": "fe68094aeaed2ec6952d5bcb3477adf52a403bd415e3d035344ef7141ebe18a2",
+    "src/models/tokenizer.py": "71545b02e76257b0daa462b81bf90f4a9ef161b74b2c331159e07f7deba4f697",
+    "src/reporting.py": "61562459665c28c7ff8d6c05b2ea16be9e8458b1f52fe107334f0b017b1fb2c8",
+    "src/runs.py": "fa623116bf0cd0b438319822386a0b6819614f34e40489130314ca12664285b9",
+    "src/sample.py": "5e40e6b8d1e66f70ec3aa845f7b138c7fa1cc3109d8cdc0f9e73573d4330cfd7",
+    "src/telemetry.py": "254620801c04905348d98f9f6f8af4524e0de37c842dde864c1d3a5cc0c8594a",
+    "src/tokenization.py": "bb5264004c692087aad92e5cfbcb98ba83a0f8eb192ffd87f108fbaa917bf345",
+    "src/tracking.py": "0b3811e5f05f1a207e56483d126359becd2e1629d44b8e3b6104a14f778adabc",
+    "src/train.py": "e4a94de9efbda0ac996e8e810fbab01b17990f87abcd6e0012fe90a337c44ee8",
+    "src/weights.py": "bde4df024216f0ecba25002a1cc650e49bbbcdf0095e4ad20c4d74fadacb1bc7",
+    "tests/test_acquisition.py": "5e6df39a147f9fbc9f58369e22fe31be5a03be3dc3fa4dfdf2fec2caa44e6e5e",
+    "tests/test_boundaries.py": "4931620f8df7406e1879ac253b1a8247d39bf49c4165efe359c5c5a0f38c2f17",
+    "tests/test_distributed.py": "f349f89af91f7b8df82b9804dd9ca874117682f6b2a6756332dd0b186cd8c12f",
+    "tests/test_evaluation.py": "45a1a3521f47a7a323415c38f8c94b75d38aa83dea007b88441f0daba3b5bb5d",
+    "tests/test_hardware.py": "f774994f0557d0ac1cd3a7622443197015b60eca06cc56f62e4e05a10750fe84",
+    "tests/test_image_cache.py": "cdd6afd5c1df5e37cf1413e748b06f37d5aeee4f488f6c1c159f26c6dda543a1",
+    "tests/test_inference_optimizations.py": "b3ea6760d44d4063c9667a5f0542a7786d8ff20e1dea184cfbb141ae14910a70",
+    "tests/test_infrastructure.py": "94a15e78814e6b21e6a62c7a8c20f5cf9b7229e01884ca27581b0dd53af54f64",
+    "tests/test_launcher.py": "b9ad36857e7d7ebe8ea5f754da0ec37da10ef339597496a73ab08294e6a9c1d8",
+    "tests/test_models.py": "7bf8321dd765d734147afa724edcc7589c0aff47e2a67cd85eaf91ce68afd2eb",
+    "tests/test_notebook_contract.py": "c7aafb5e373780f69eeeae769f25a2ba95814393239fc682620c051151e9ce0b",
+    "tests/test_parallel_runs.py": "c629b4269cc121a672ef4f9478a2a8f8c6c1b0ae929bb48fb87a69680e92eea9",
+    "tests/test_training.py": "d6208ac9ddae20761d791959ac3adf36f81697a45a5679d40c5e1d047e59fe53",
+    "verification/pip-resolution.json": "62917443768fa479d1517bb3de0d5d4c3fcf7724c18b8e51265ddb488298c795",
+    "verification/usage-analysis-2026-10-01.json": "62bec354604fe11ef7646281c2a5ae5aa98e817d0c7711eb97ed3c70b1ebc4aa"
+  },
+  "l40s_update": {
+    "accumulation_full_batch": {
+      "each_generator_microsteps": 2,
+      "tokenizer_one_gpu_microsteps": 8,
+      "tokenizer_two_gpus_microsteps_per_rank": 4
+    },
+    "changed": [
+      "Five explicit notebook batch configuration cells",
+      "Notebook guidance and README",
+      "Offline notebook configuration/protocol regression test"
+    ],
+    "date": "2026-10-01",
+    "implementation": "Existing training/inference code consumes the larger values; no algorithm or dependency changes required",
+    "migration": "Restart kernel and create a fresh run after updating completed/stopped project; keep cached data and previous run artifacts. Unchanged requirements need no reinstall in an existing compatible environment.",
+    "notebook_settings": {
+      "autoregressive_microbatch": 32,
+      "diffusion_microbatch": 32,
+      "feature_batch": 32,
+      "generation_batch": 16,
+      "tokenizer_inference_batch": 64,
+      "tokenizer_microbatch_per_gpu": 8
+    },
+    "numerics": "Larger training microbatches can change stochastic noise/dropout grouping and floating-point execution. Bulk generation batch changes sample streams relative to earlier presets. DDIM settings retain common initial-noise streams within the new frozen analysis.",
+    "preserved": [
+      "One epoch each and zero warm-up",
+      "Global effective batch 64",
+      "FP32, eager execution, AMP/TF32 disabled",
+      "Architectures, optimizer settings, losses, seeds and dataset split",
+      "All six sampling settings and full balanced-reference evaluation",
+      "Benchmark batches 1/8, warmups 3, repetitions 30",
+      "Prior data/cache/sampling optimizations and absence of ten-minute warnings",
+      "Standard pip in existing notebook Python; no new venv or kernel requirement",
+      "Existing data, model weights, runs and jobs"
+    ],
+    "review": "Independent static review confirmed batch consumers, sample-weighted accumulation, UUID routing, CUDA architecture checks, and unchanged FP32/benchmark protocol",
+    "target": "One or two full NVIDIA L40S GPUs; existing MPS > multiple CUDA > single CUDA > CPU selection retained",
+    "unverified": [
+      "Actual L40S memory fit",
+      "Actual L40S throughput and end-to-end ETA",
+      "Actual CUDA/NCCL execution on the selected Pod",
+      "Image quality"
+    ]
+  },
+  "nccl_startup_update": {
+    "assessment": "Evidence is consistent with a stall at the first NCCL barrier before model construction. Missing explicit binding is corrected, but distinct UUID masks already made local cuda:0 the expected selection; the warning alone does not prove the cause.",
+    "changes": [
+      "NCCL process-group device_id is explicitly local cuda:0 for both global ranks",
+      "NCCL barriers explicitly use device_ids=[0]",
+      "Gloo initialization and barriers receive no CUDA device arguments",
+      "Flushed rank-labelled initialization/checkpoint/data/model/DDP/epoch-start messages"
+    ],
+    "date": "2026-10-01",
+    "diagnostic_retry": "After interruption, user may set NCCL_DEBUG=INFO and NCCL_P2P_DISABLE=1 before relaunching the unfinished tokenizer stage on unchanged uploaded source. This retains two-GPU DDP and tests another transport; reduced communication throughput is possible. Not enabled by this package and not yet tested on the Pod.",
+    "evidence": {
+      "distinct_worker_log_tails": 1,
+      "first_log_time": "2026-10-01 08:34:22",
+      "gpu_memory_mib_both": [
+        679,
+        679
+      ],
+      "gpu_utilization_percent_both": [
+        100,
+        100
+      ],
+      "last_log_time": "2026-10-01 08:38:51",
+      "log_name": "usage-20261001-083417.log",
+      "pod_topology_from_user": {
+        "gpu_path": "SYS, different NUMA nodes",
+        "pcie_p2p_report": "OK in both directions",
+        "shared_memory_free": "176G"
+      },
+      "sample_count": 54,
+      "sha256": "e1553eb97a3843527151351bc4e519660dba5bfba905db2ac87011761cee143a"
+    },
+    "migration": "Stop workers before replacing source, restart the kernel and create a fresh run for this source patch; retain caches and old runs. If a retry on existing source is progressing, do not replace it mid-run.",
+    "pending": [
+      "NCCL INFO output from the diagnostic retry",
+      "Actual L40S startup resolution",
+      "Actual L40S performance and memory fit"
+    ],
+    "references": [
+      "https://docs.pytorch.org/docs/2.14/distributed.html#torch.distributed.init_process_group",
+      "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting/gpu_troubleshooting.html"
+    ],
+    "tests": "Seven additional offline cases cover both ranks/backend initialization, NCCL/Gloo barriers and invalid UUID rejection; full suite178 passed",
+    "unchanged": [
+      "L40S batch preset and full evaluation",
+      "Scientific training algorithms and optimizer/precision settings",
+      "30-minute process-group failure timeout",
+      "Default NCCL transport selection",
+      "Notebook and requirements",
+      "No ten-minute stage alerts"
+    ]
+  },
+  "not_executed": [
+    "notebook cells",
+    "AFHQ or pretrained-weight downloads",
+    "real-model training",
+    "CUDA or NCCL workload",
+    "cloud deployment or spending"
+  ],
+  "pending": [
+    "target-GPU memory fit and performance",
+    "MPS regression execution of this changed pipeline",
+    "NCCL behavior on the selected Pod",
+    "converged image quality and scientific comparison"
+  ],
+  "performance_update": {
+    "basis": "User-provided three RunPod usage logs; read-only aggregate analysis in usage-analysis-2026-10-01.json",
+    "changes": [
+      "Prepared manifest reuse replaces repeated full raw-image scans in downstream stages",
+      "Eight bounded inventory threads read raw image bytes once and create a shared immutable RGB128 snapshot",
+      "Packed snapshot header and per-row SHA-256 checked at consumption; full cache hash on explicit inventory reuse",
+      "Tokenizer reconstruction/token cache inference batch32; training microbatch4 unchanged",
+      "CUDA inference pin_memory and nonblocking transfers",
+      "Transformer preallocated inference KV cache and boundary-only range checks",
+      "Diffusion boundary-only input checks with unchanged sampler equations",
+      "Bounded asynchronous PNG encoding/writes and single-read verified image decode",
+      "Bounded KID kernel-matrix reuse with original subset RNG",
+      "Requested-checkpoint-only inference verification; full training recovery retained",
+      "Both ten-minute alerts removed and unchanged log-tail repetition suppressed"
+    ],
+    "date": "2026-10-01",
+    "migration": "Fresh run and kernel restart required after source update; retain shared data cache and previous run artifacts; do not overwrite source under active cloud workers",
+    "observed_before": {
+      "cache_tokens_seconds": [
+        817,
+        822
+      ],
+      "ddim50_generation_seconds": [
+        444,
+        449
+      ],
+      "freeze_evaluation_seconds": [
+        273,
+        278
+      ],
+      "freeze_tokenizer_seconds": [
+        253,
+        258
+      ],
+      "prepare_reference_seconds": [
+        299,
+        304
+      ],
+      "token_cache_gpu_utilization_median_percent": 2
+    },
+    "reviews": [
+      "Independent data/cache review",
+      "Independent sampler/PNG/recovery review"
+    ],
+    "scope": "Earlier generic performance update retained; L40S notebook batch overrides are recorded separately in l40s_update",
+    "synthetic_metric_microbenchmark": {
+      "feature_width": 2048,
+      "host": "local M2 Pro CPU",
+      "max_mean_std_absolute_difference": 1.8e-17,
+      "overall_new_seconds": 0.46602,
+      "overall_old_seconds": 1.46771,
+      "overall_population": 1500,
+      "overall_subset": 500,
+      "per_class_new_seconds": 0.02972,
+      "per_class_old_seconds": 0.08423,
+      "per_class_population": 500,
+      "per_class_subset": 100,
+      "scope": "Synthetic KID-only check, not cloud inference speed or actual image metrics",
+      "subsets": 100
+    },
+    "timing_note": "Original durations are brackets inferred from sampled process presence, not successful-stage receipts; source explains repeated hash passes. Optimized RunPod timings are unmeasured.",
+    "uncertainties": [
+      "No actual updated CUDA/NCCL or MPS workload executed",
+      "Tokenizer inference batch32 fit and output-rounding behavior must be measured on target hardware",
+      "No guaranteed optimized ETA or GPU utilization target",
+      "Snapshot bytes become canonical preprocessed inputs; changing unused raw images does not change the committed snapshot"
+    ]
+  },
+  "review_fixes": [
+    "sample-exact global DDP batches",
+    "rank-zero writes and per-rank RNG restore",
+    "shared run gate with exclusive family locks",
+    "failed coordinator descendant cleanup and lease release",
+    "CUDA UUID assignments and inherited device ordering",
+    "same GPU for all benchmarks with actual GPU identity",
+    "clear incompatible CUDA/driver diagnostics",
+    "Explicit local CUDA device for NCCL initialization and barriers; rank-labelled startup boundaries"
+  ],
+  "setup_history": [
+    {
+      "change": "README and notebook require an isolated project venv and selecting its registered kernel before dependency installation",
+      "cloud_execution": "not performed; user must run setup in the Pod",
+      "date": "2026-10-01",
+      "issue": "Debian-managed pyparsing cannot be uninstalled by pip because RECORD is absent",
+      "previous_full_suite": "148 offline tests passed before this documentation/kernel-metadata correction; affected notebook tests rerun",
+      "status": "superseded by requested existing-kernel setup",
+      "unchanged": [
+        "all experiment source",
+        "requirements pins/hashes",
+        "data and run artifacts",
+        "one-epoch FP32 full-evaluation settings"
+      ],
+      "validation": {
+        "notebook_contract_tests": {
+          "passed": 2,
+          "seconds": 0.07
+        },
+        "notebook_outputs": "empty",
+        "notebook_schema": "valid",
+        "ruff": "passed"
+      }
+    },
+    {
+      "change": "13 direct scientific/runtime pins; compatible widget and pyparsing requirements; no forced transitive upgrades or Jupyter/kernel install in runtime requirements",
+      "cloud_installation": "not executed; actual provider Python may contain other unknown conflicts",
+      "date": "2026-10-01",
+      "dependency_policy": "Full transitive hash lock replaced by direct pins and recorded installed run environments",
+      "previous_full_suite": "148 synthetic tests passed before these requirements/documentation/metadata changes; affected notebook contract tests rerun",
+      "request": "Use the existing RunPod Python/kernel without creating a venv or registering a kernel",
+      "status": "completed before performance optimization; scientific source then changed in the performance update",
+      "unchanged": [
+        "all experiment source hashes",
+        "all 85 notebook code cells",
+        "model configurations and one-epoch FP32 full evaluation settings",
+        "data, model weights and run artifacts",
+        "existing local environment packages"
+      ],
+      "validation": {
+        "debian_pyparsing_3.1.1": "satisfies every checked active requirement",
+        "local_pip_dry_run_planned_installs": 0,
+        "notebook_contract_tests": {
+          "passed": 2,
+          "seconds": 0.08
+        },
+        "notebook_outputs": "empty",
+        "notebook_schema": "valid",
+        "offline_metadata_targets": 4,
+        "ruff": "passed"
+      }
+    }
+  ],
+  "status": "178 offline tests passed; NCCL startup binding and diagnostics corrected; actual Pod stall resolution remains unverified"
+}

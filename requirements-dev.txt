@@ -1,0 +1,7 @@
+# Optional local authoring and test tools. Not needed in RunPod's existing Jupyter.
+-r requirements.txt
+jupyterlab==4.6.3
+ipykernel==7.3.0
+nbformat==5.11.1
+pytest==9.1.1
+ruff==0.16.8

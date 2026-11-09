@@ -1,0 +1,23 @@
+# Runtime dependencies for the notebook's existing Python (3.12 or 3.13).
+# Install: python -m pip install -r requirements.txt
+# Compatible installed transitive packages are reused; do not add --upgrade.
+# PyTorch/torchvision remain a matched pair; Linux PyPI wheels use CUDA 13.
+# CUDA execution requires an NVIDIA driver compatible with CUDA 13 (R580+).
+torch==2.14.0
+torchvision==0.29.0
+lpips==0.1.4
+torch-fidelity==0.4.0
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+matplotlib==3.11.2
+pillow==12.3.0
+tqdm==4.70.1
+tensorboard==2.21.0
+psutil==7.2.2
+filelock==4.0.0
+
+# Keep working notebook widgets without replacing the Jupyter server or kernel.
+ipywidgets>=8.1,<9
+# Matplotlib accepts Debian's pyparsing 3.1.1; do not force its replacement.
+pyparsing>=3

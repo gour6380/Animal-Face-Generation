@@ -1,0 +1,142 @@
+{
+  "autoregressive": {
+    "dropout": 0.1,
+    "feedforward_dim": 1536,
+    "heads": 6,
+    "layers": 6,
+    "training": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "effective_batch": 64,
+      "epochs": 200,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.0003,
+      "microbatch": 32,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2027,
+      "warmup_epochs": 0,
+      "weight_decay": 0.01
+    },
+    "width": 384
+  },
+  "data": {
+    "classes": [
+      "cat",
+      "dog",
+      "wild"
+    ],
+    "display_classes": [
+      "cat",
+      "dog",
+      "wildlife"
+    ],
+    "expected_total": 15803,
+    "image_size": 128,
+    "split_seed": 1001,
+    "url": "https://www.dropbox.com/s/vkzjokiwof5h8w6/afhq_v2.zip?dl=1",
+    "validation_fraction": 0.1
+  },
+  "diffusion": {
+    "attention_heads": 4,
+    "attention_sizes": [
+      8,
+      4
+    ],
+    "beta_end": 0.02,
+    "beta_start": 0.0001,
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "ema_decay": 0.999,
+    "residual_blocks": 2,
+    "time_embedding_dim": 256,
+    "timesteps": 1000,
+    "training": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "effective_batch": 64,
+      "epochs": 200,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.0001,
+      "microbatch": 32,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2027,
+      "warmup_epochs": 0,
+      "weight_decay": 0.01
+    },
+    "validation_seed": 4001
+  },
+  "evaluation": {
+    "benchmark_batches": [
+      1,
+      8
+    ],
+    "benchmark_repetitions": 30,
+    "benchmark_warmups": 3,
+    "ddim_steps": [
+      25,
+      50,
+      100
+    ],
+    "feature_batch": 32,
+    "generation_batch": 16,
+    "grid_per_class": 12,
+    "kid_class_subset": 100,
+    "kid_overall_subset": 500,
+    "kid_subsets": 100,
+    "max_per_class": 500,
+    "metric_seed": 5003,
+    "precision_recall_k": 3,
+    "reference_seed": 5002,
+    "sampling_seed": 5001,
+    "temperatures": [
+      0.8,
+      1.0,
+      1.2
+    ]
+  },
+  "protocol_version": "1.0",
+  "runtime": {
+    "cpu_threads": 4,
+    "device": "auto",
+    "io_workers": 8,
+    "num_workers": 0,
+    "tokenizer_inference_batch": 64
+  },
+  "tokenizer": {
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "codebook_size": 512,
+    "commitment_weight": 0.25,
+    "embedding_dim": 64,
+    "perceptual_weight": 0.1,
+    "residual_blocks": 2,
+    "training": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "effective_batch": 64,
+      "epochs": 100,
+      "epsilon": 1e-08,
+      "gradient_clip": 1.0,
+      "learning_rate": 0.0002,
+      "microbatch": 8,
+      "minimum_lr_fraction": 0.1,
+      "seed": 2027,
+      "warmup_epochs": 0,
+      "weight_decay": 0.0
+    }
+  }
+}
